@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Proposicional</title>
+    <script>
+        function calcular() {
+            let expressao = document.getElementById("expressao").value;
+            let valores = {};
+            document.querySelectorAll(".variavel").forEach(input => {
+                valores[input.name] = input.checked ? "1" : "0";
+            });
+
+            fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ expressao, valores })
+            })
+            .then(response => response.json())
+            .then(data => document.getElementById("resultado").innerText = "Resultado: " + data.resultado)
+            .catch(error => console.error("Erro:", error));
+        }
+    </script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Calculadora Proposicional</h1>
+    <input type="text" id="expressao" placeholder="Digite a expressão (ex: A ∧ B → ¬C)">
+    <div id="variaveis">
+        <label><input type="checkbox" class="variavel" name="A"> A</label>
+        <label><input type="checkbox" class="variavel" name="B"> B</label>
+        <label><input type="checkbox" class="variavel" name="C"> C</label>
+    </div>
+    <button onclick="calcular()">Calcular</button>
+    <p id="resultado"></p>
+</body>
+</html>
