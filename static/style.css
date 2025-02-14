@@ -5,45 +5,53 @@ body {
     padding: 20px;
 }
 
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+}
+
 h1 {
     color: #333;
 }
 
-input, button {
+#input {
+    width: 90%;
     padding: 10px;
-    margin: 10px;
-    font-size: 16px;
-}
-
-input {
-    width: 300px;
+    font-size: 18px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    text-align: left;
+}
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 15px;
 }
 
 button {
+    padding: 15px;
+    font-size: 18px;
     background-color: #007bff;
     color: white;
     border: none;
-    cursor: pointer;
     border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
 button:hover {
     background-color: #0056b3;
 }
 
-#variaveis {
-    margin: 10px 0;
+.clear-btn {
+    background-color: #dc3545;
 }
 
-label {
-    margin-right: 10px;
-    font-size: 18px;
-}
-
-#resultado {
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 15px;
+.clear-btn:hover {
+    background-color: #a71d2a;
 }
