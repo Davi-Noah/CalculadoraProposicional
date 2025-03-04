@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora Proposicional</title>
     <link rel="stylesheet" href="../static/style.css">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="/static/manifest.json">
     <meta name="theme-color" content="#000000">
 
 </head>
@@ -42,7 +42,7 @@
         }
 
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js')
+            navigator.serviceWorker.register('/static/sw.js')
             .then(() => console.log('Service Worker registrado'))
             .catch((error) => console.log('Erro no registro:', error));
         }
