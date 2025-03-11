@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora Proposicional</title>
     <link rel="stylesheet" href="../static/style.css">
-    <link rel="manifest" href="/static/manifest.json">
     <meta name="theme-color" content="#000000">
 
 </head>
@@ -21,9 +20,9 @@
             <button onclick="adicionarTexto('D')">D</button>
             
             <button onclick="adicionarTexto('¬')">¬ (Negação)</button>
-            <button onclick="adicionarTexto('∧')">∧ (E)</button>
-            <button onclick="adicionarTexto('∨')">∨ (Ou)</button>
-            <button onclick="adicionarTexto('→')">→ (Implicação)</button>
+            <button onclick="adicionarTexto('∧')">∧ (Conjução)</button>
+            <button onclick="adicionarTexto('∨')">∨ (Disjunção)</button>
+            <button onclick="adicionarTexto('→')">→ (Condicional)</button>
             
             <button onclick="adicionarTexto('↔')">↔ (Bicondicional)</button>
             <button onclick="adicionarTexto('(')">(</button>
@@ -40,13 +39,6 @@
         function limparTexto() {
             document.getElementById("input").value = "";
         }
-
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/static/sw.js')
-            .then(() => console.log('Service Worker registrado'))
-            .catch((error) => console.log('Erro no registro:', error));
-        }
-
     </script>
 </body>
 </html>
