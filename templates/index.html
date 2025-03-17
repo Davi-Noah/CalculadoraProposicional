@@ -41,11 +41,6 @@
             document.getElementById("input").value = "";
         }
 
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/static/sw.js')
-            .then(() => console.log('Service Worker registrado'))
-            .catch((error) => console.log('Erro no registro:', error));
-        }
 
     </script>
 </body>
